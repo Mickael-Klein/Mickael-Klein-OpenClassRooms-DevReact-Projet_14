@@ -1,0 +1,48 @@
+.ReactModalPortal {
+  position: relative;
+  z-index: 30;
+}
+
+.addEmployeeMain {
+  background-color: rgb(230, 229, 229);
+
+  h1 {
+    text-align: center;
+  }
+
+  .formContainer {
+    width: 75%;
+    margin: auto;
+    padding: 1em 1em;
+    background-color: white;
+    border-radius: 10px;
+
+    #formAddEmployee {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      gap: 40px;
+
+      .employeeIdInfo {
+        width: 40%;
+      }
+
+      .employeeEnterpriseInfo {
+        width: 40%;
+      }
+
+      .employeeAddressInfo {
+        width: 100%;
+      }
+
+      .formTitle {
+        text-align: center;
+      }
+    }
+  }
+
+  .errorInfo {
+    height: 20px;
+    color: red;
+  }
+}

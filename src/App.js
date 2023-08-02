@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Index from "./Page/Index/Index";
+import AddEmployee from "./Page/AddEmployee/AddEmployee";
+import NotFound from "./Page/NotFound/NotFound";
+import Header from "./Component/Header/Header";
+import { useSelector } from "react-redux";
 
 function App() {
+  document.title = useSelector((state) => state.userInteraction.pageTitle);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/addemployee" element={<AddEmployee />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
