@@ -130,8 +130,6 @@ export default function AddEmployee() {
       console.log("Form is not correct");
       return;
     } else {
-      console.log("Form validate");
-
       const employee = {
         firstName: firstName,
         lastName: lastName,
@@ -175,7 +173,6 @@ export default function AddEmployee() {
   // Empty form function
   function emptyForm() {
     setOnFormReset(true);
-    console.log("on form rest go true");
     const form = document.querySelector("form");
     setBirthStartDate(new Date());
     setHiringStartDate(new Date());
