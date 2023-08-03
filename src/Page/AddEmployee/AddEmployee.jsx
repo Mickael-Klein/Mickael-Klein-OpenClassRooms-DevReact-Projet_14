@@ -204,11 +204,12 @@ export default function AddEmployee() {
         <h1>Add Employee</h1>
         <div className="formContainer">
           <form id="formAddEmployee">
-            <div className="employeeIdInfo">
+            <div className="employeeIdInfo formAddEmployee__sectionContainer">
               <p className="formTitle">Identy Informations</p>
-              <div className="formInputsGroup">
+              <div className="formInfosGroup">
                 <div className="employeeIdInfo__name">
                   <div className="inputContainer">
+                    <label htmlFor="firstName">First Name</label>
                     <input
                       type="text"
                       name="firstName"
@@ -227,6 +228,7 @@ export default function AddEmployee() {
                   </div>
 
                   <div className="inputContainer">
+                    <label htmlFor="lastName">Last Name</label>
                     <input
                       type="text"
                       name="lasttName"
@@ -245,8 +247,11 @@ export default function AddEmployee() {
                   </div>
                 </div>
                 <div className="inputContainer">
+                  <label htmlFor="birthStartDate">Birth Date</label>
                   <DatePicker
                     showIcon
+                    name="birstStartDate"
+                    id="birthStartDate"
                     selected={birthStartDate}
                     onChange={(date) => setBirthStartDate(date)}
                     className={!isBirthDateValid ? "inputError" : ""}
@@ -261,12 +266,15 @@ export default function AddEmployee() {
                 </div>
               </div>
             </div>
-            <div className="employeeEnterpriseInfo">
+            <div className="employeeEnterpriseInfo  formAddEmployee__sectionContainer">
               <p className="formTitle">Employee Informations</p>
               <div className="formInfosGroup">
                 <div className="inputContainer">
+                  <label htmlFor="hiringStartDate">Hiring Date</label>
                   <DatePicker
                     showIcon
+                    name="hiringStartDate"
+                    id="hiringStartDate"
                     selected={hiringStartDate}
                     onChange={(date) => setHiringStartDate(date)}
                     className={!isHiringDateValid ? "inputError" : ""}
@@ -281,7 +289,10 @@ export default function AddEmployee() {
                 </div>
 
                 <div className="inputContainer">
+                  <label htmlFor="department">Department</label>
                   <Dropdown
+                    name="department"
+                    id="department"
                     dropdownData={reduxDepartment}
                     onChange={(selection) => setDepartment(selection)}
                     onReset={onFormReset}
@@ -289,10 +300,22 @@ export default function AddEmployee() {
                 </div>
               </div>
             </div>
-            <div className="employeeAddressInfo">
+            <div className="employeeAddressInfo  formAddEmployee__sectionContainer">
               <p className="formTitle">Employee Address</p>
               <div className="formInfosGroup">
                 <div className="inputContainer">
+                  <label htmlFor="state">State</label>
+                  <Dropdown
+                    name="state"
+                    id="state"
+                    dropdownData={stateArr}
+                    onChange={(selection) => setStateAdress(selection)}
+                    onReset={onFormReset}
+                  />
+                  <div className="errorInfo"></div>
+                </div>
+                <div className="inputContainer">
+                  <label htmlFor="street">Street</label>
                   <input
                     type="text"
                     name="street"
@@ -312,6 +335,7 @@ export default function AddEmployee() {
 
                 <div className="cityZipContainer">
                   <div className="inputContainer">
+                    <label htmlFor="city">City</label>
                     <input
                       type="text"
                       name="city"
@@ -329,35 +353,36 @@ export default function AddEmployee() {
                     )}
                   </div>
 
-                  <div className="inputContainer"></div>
-                  <input
-                    type="number"
-                    name="zipCode"
-                    id="zipCode"
-                    placeholder="Zipcode"
-                    onChange={(e) => setZipCode(e.target.value)}
-                    className={!isZipCodeValid ? "inputError" : ""}
-                  />
-                  {!isZipCodeValid ? (
-                    <div className="errorInfo">
-                      <p>ZipCode format expected: "98765" or "98765-4321"</p>
-                    </div>
-                  ) : (
-                    <div className="errorInfo"></div>
-                  )}
-                </div>
-                <div className="inputContainer">
-                  <Dropdown
-                    dropdownData={stateArr}
-                    onChange={(selection) => setStateAdress(selection)}
-                    onReset={onFormReset}
-                  />
+                  <div className="inputContainer">
+                    <label htmlFor="zipCode">Zipcode</label>
+                    <input
+                      type="number"
+                      name="zipCode"
+                      id="zipCode"
+                      placeholder="Zipcode"
+                      onChange={(e) => setZipCode(e.target.value)}
+                      className={!isZipCodeValid ? "inputError" : ""}
+                    />
+                    {!isZipCodeValid ? (
+                      <div className="errorInfo">
+                        <p>ZipCode format expected: "98765" or "98765-4321"</p>
+                      </div>
+                    ) : (
+                      <div className="errorInfo"></div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-            <button type="submit" onClick={(e) => handleSubmit(e)}>
-              Submit
-            </button>
+            <div className="submitButtonContainer">
+              <button
+                type="submit"
+                onClick={(e) => handleSubmit(e)}
+                id="submitFormButton"
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </main>

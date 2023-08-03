@@ -3,4 +3,15 @@ nav {
   align-items: center;
   gap: 75px;
   white-space: nowrap;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+.navLinkContainer--selected {
+  font-weight: bold;
 }

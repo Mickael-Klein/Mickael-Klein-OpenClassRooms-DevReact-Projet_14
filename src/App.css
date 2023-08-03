@@ -1,6 +1,10 @@
 main {
   position: relative;
   z-index: 2;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   padding-top: 100px;
+}
+
+h1 {
+  text-align: center;
 }

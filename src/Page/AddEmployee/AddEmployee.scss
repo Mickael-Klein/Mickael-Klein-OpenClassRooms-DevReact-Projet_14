@@ -6,10 +6,6 @@
 .addEmployeeMain {
   background-color: rgb(230, 229, 229);
 
-  h1 {
-    text-align: center;
-  }
-
   .formContainer {
     width: 75%;
     margin: auto;
@@ -21,7 +17,17 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-      gap: 40px;
+      gap: 30px;
+
+      .formAddEmployee__sectionContainer {
+        min-width: 240px;
+      }
+
+      .formTitle {
+        font-size: 1.2em;
+        font-weight: bolder;
+        margin-bottom: 1em;
+      }
 
       .employeeIdInfo {
         width: 40%;
@@ -38,11 +44,45 @@
       .formTitle {
         text-align: center;
       }
+
+      .inputContainer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+
+        label {
+          font-size: 1.05em;
+          font-weight: 600;
+          font-style: italic;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .submitButtonContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+
+      #submitFormButton {
+        background-color: #9cafb7;
+        padding: 0.2em 0.5em;
+        border: solid 1px black;
+        border-radius: 5px;
+        font-size: 1.15em;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($color: #9cafb7, $amount: 10);
+        }
+      }
     }
   }
 
   .errorInfo {
-    height: 20px;
+    height: 10px;
     color: red;
   }
 }

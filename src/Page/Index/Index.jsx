@@ -16,6 +16,7 @@ export default function Index() {
   }, [dispatch]);
   return (
     <main className="indexMain">
+      <h1>Current Employee</h1>
       <section className="dataTableContainer">
         <DataTableComponent />
       </section>
